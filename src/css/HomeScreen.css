@@ -1,0 +1,37 @@
+
+
+
+
+/* Styl dla pierwszego punktu */
+.punkt1 {
+    background-image: url("./assets/phone_in.svg");
+  
+  }
+  
+  /* Styl dla drugiego punktu */
+  .punkt2 {
+    background-image: url("./assets/phone_out.svg");
+  }
+  
+  /* Styl dla trzeciego punktu */
+  .punkt3 {
+    background-image: url("./assets/phone_missed.svg");
+  }
+  
+  li{
+  
+  padding: 1% 0 2% 30%;
+  list-style: none;
+  
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 20%;
+  color: #D4D4D4;
+   
+  
+  
+  
+  
+  
+  
+  }
