@@ -1,0 +1,421 @@
+#map-wrapper{
+    margin: 3%;
+    margin-left: 8%;
+    width: 88%;
+    overflow: hidden;
+    position: fixed;
+    background-color: #37485D;
+    padding: 1.5%;
+    border-radius: 35px;
+    overflow: hidden;
+    min-width: 900px;
+    min-height: 400px;
+}
+#map-container {
+    #position: fixed;
+    width: 100%;
+    height: 86vh;
+    overflow: hidden;
+    border-radius: 35px;
+}
+
+
+#search-bar-container {
+    position: absolute;
+    z-index: 1;
+    background-color: #C2C3C7;
+    border-radius: 35px;
+    padding: 4px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    overflow: hidden;
+}
+
+#search-input {
+    height: 20px;
+    margin: 0.5rem;
+    width: 50%;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 35px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: #D9D9D9;
+    background-image: url(../assets/search.png);
+    background-position: 10px;
+    padding-left: 2rem;
+    background-size: 1rem;
+    background-repeat: no-repeat;
+}
+
+#search-input:focus {
+    #border-color: #007bff;
+    #background-color: whitesmoke;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+#mapNavBar{
+    padding: 6px;
+    height: 64px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: rgba(76, 76, 76, 0.9);
+    width: 94%;
+    border-radius: 35px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+#suggestions-list div {
+    margin-bottom: 0.4rem;
+    padding: 0.8rem;
+    background-color: #D9D9D9;
+    border-radius: 35px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    animation-delay: 0.1s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#suggestions-list div:hover{
+    background-color: whitesmoke;
+}
+
+
+#bottomBar {
+    margin-left: 3%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 5.6%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    background-color: #f4f4f4;
+    background-color: rgba(76, 76, 76, 0.9);
+    z-index: 999;
+    border-radius: 35px;
+
+}
+
+#routeAccept,
+#routeCancel,
+#showRoute {
+    margin: 0 10px; /* Miejsce pomiędzy przyciskami */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 35px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#routeAccept {
+    background-color: #28a745; /* Zielony kolor dla przycisku Accept */
+    color: white; /* Biały kolor tekstu */
+}
+
+#routeAccept:hover {
+    background-color: #218838;
+}
+
+#routeCancel {
+    background-color: #dc3545;
+    color: white;
+}
+
+#routeCancel:hover {
+    background-color: #c82333;
+}
+
+#showRoute {
+    background-color: darkorange;
+    color: white;
+}
+
+#showRoute:hover {
+    background-color: #cc7000;
+}
+
+#time,
+#distance{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    left: 32%;
+    top: 8%;
+    height: 72%;
+    position: absolute;
+    z-index: 1;
+    background-color: #C2C3C7;
+    border-radius: 35px;
+    padding: 4px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 24.5%;
+    overflow: hidden;
+}
+
+#time{
+    left: 58%;
+}
+
+#cancelAcceptedRoute {
+    position: absolute;
+    width: 15%;
+    height: 82%;
+    left: 84%;
+    font-size: 1.5rem;
+    background-color: #E74C3C;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#cancelAcceptedRoute:hover {
+    background-color: #C0392B;
+}
+
+
+
+#route-panel {
+    overflow: hidden;
+    background-color: #C2C3C7;
+    border-radius: 35px;
+    width: 30.5%;
+    top: 68%;
+    position: absolute;
+    border: 1px solid #ccc;
+    margin: 20px 0;
+    color: black;
+    box-sizing: border-box;
+}
+
+#maneuvers-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#maneuvers-list li {
+    color: black;
+    padding: 10px;
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+#showMoreSteps {
+    background-color: #D9D9D9;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    padding: 15px 15px;
+    border: none;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    cursor: pointer;
+}
+
+#showMoreSteps:hover {
+    background-color: #C2C3C7;
+}
+
+
+#additional-maneuvers {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+}
+
+#additional-maneuvers li {
+    color: black;
+    list-style-type: none;
+    padding: 10px;
+    background-color: #C2C3C7;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.maneuver-type{
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-right: 2px;
+}
+
+.instruction-details {
+    margin-left: 10px;
+}
+.instruction-details strong{
+    font-size: 1.3rem;
+}
+.instruction-details p {
+    margin: 2px;
+    margin-top: 4px;
+}
+
+#star-tab,
+#home-tab{
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40px;
+    margin: 0.5rem;
+    width: 14%;
+    padding: 8px;
+    border-radius: 35px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+    left: 67%;
+    background-color:#D9D9D9;
+
+}
+#home-tab{
+    left: 82%;
+}
+#star-tab:hover,
+#home-tab:hover {
+    transform: scale(1.1);
+}
+
+
+.remove-from-list {
+    background-color: #ff6347;
+
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-from-list:hover {
+    background-color: #d32f2f;
+}
+
+#add-star,
+#add-home{
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 35px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    background-color: #D9D9D9;
+}
+#add-star:hover,
+#add-home:hover{
+    background-color: #C2C3C7;
+}
+
+#add-star{
+    padding-left: 3rem;
+    background-image: url('../assets/star.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+#add-home{
+    padding-left: 3rem;
+    background-image: url('../assets/home.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.close-keyboard-button {
+    background-color: #757575; /* Średni szary kolor tła */
+    border: none; /* Usunięcie obramowania */
+    color: white; /* Biały kolor tekstu */
+    padding: 10px 20px; /* Wielkość wewnętrznego odstępu */
+    text-align: center; /* Wyśrodkowanie tekstu */
+    font-size: 16px; /* Rozmiar czcionki */
+    cursor: pointer; /* Zmiana kursora na wskaźnik */
+    border-radius: 5px; /* Zakrąglenie rogów */
+    transition: background-color 0.3s ease; /* Płynna zmiana koloru tła */
+}
+
+.close-keyboard-button:hover {
+    background-color: #616161; /* Ciemniejszy szary kolor tła po najechaniu myszą */
+}
+
+.close-keyboard-button:active {
+    background-color: #424242; /* Jeszcze ciemniejszy szary kolor tła po kliknięciu */
+}
+
+#keyboard-container{
+    z-index: 1000;
+    left: 32%;
+    top:287%;
+    position: absolute;
+}
+
+.change-list-page {
+    margin-top: 10px;
+}
+
+.change-list-page button {
+    font-size: 1.1rem;
+    margin-right: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #ddd;
+    padding: 4px 10px;
+    border-radius: 35px;
+}
+
+.change-list-page button.active-page {
+    background-color: #f7f7f7;
+}
+
+
+
+
+
+#mini-map-wrapper{
+    overflow: hidden;
+    position: fixed;
+    padding: 1.5%;
+    border-radius: 35px;
+    overflow: hidden;
+    min-width: 900px;
+    min-height: 400px;
+}
+#mini-map-container {
+    position: fixed;
+    width: 35%;
+    height: 86vh;
+    overflow: hidden;
+    border-radius: 35px;
+}

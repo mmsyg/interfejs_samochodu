@@ -3,14 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mapbox/mapbox-gl-directions": "^4.1.2",
+    "@mapbox/mapbox-gl-geocoder": "^5.0.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "dotenv": "^16.3.1",
+    "mapbox-gl": "^2.0.0",
     "react": "^18.2.0",
     "react-clock": "^4.6.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.0",
     "react-scripts": "5.0.1",
+    "react-simple-keyboard": "^3.7.60",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
