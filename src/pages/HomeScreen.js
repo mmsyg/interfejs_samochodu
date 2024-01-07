@@ -5,6 +5,7 @@ import ContactsMini from "../components/ContactsMini";
 import ButtonsMini from "../components/ButtonsMini";
 
 import "../index.css"; // Zaimportuj plik CSS dla komponentu 
+import "../css/HomeScreen.css";
 import map from "../assets/map_test.png";
 
 

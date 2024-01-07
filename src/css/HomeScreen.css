@@ -4,18 +4,18 @@
 
 /* Styl dla pierwszego punktu */
 .punkt1 {
-    background-image: url("./assets/phone_in.svg");
+    background-image: url("../assets/phone_in.svg");
   
   }
   
   /* Styl dla drugiego punktu */
   .punkt2 {
-    background-image: url("./assets/phone_out.svg");
+    background-image: url("../assets/phone_out.svg");
   }
   
   /* Styl dla trzeciego punktu */
   .punkt3 {
-    background-image: url("./assets/phone_missed.svg");
+    background-image: url("../assets/phone_missed.svg");
   }
   
   li{
@@ -26,7 +26,20 @@
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 20%;
-  color: #D4D4D4;
+  width: 70%;
+  margin-bottom: 8%;
+    padding: 1% 0 2% 18%;
+  
+  
+    background-size: 15%;
+    color: #D4D4D4;
+  
+  
+    align-items: center;
+    display:inline-flex;
+  
+    left:0%;
+    right:1%
    
   
   

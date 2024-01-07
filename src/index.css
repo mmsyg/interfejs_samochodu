@@ -1,13 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
 body {
   margin: 0;
   color: black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Roboto";
+  font-family: 'Montserrat';
   color: #000000;
   user-select: none;
   align-items: center;
@@ -170,7 +169,7 @@ margin-right: 5%;
 }
 
 .degree{
-  font-size: 320%;
+  font-size: 3vw;
   color: #D4D4D4;
   font-weight: bolder;
 }
@@ -183,39 +182,7 @@ margin-right: 5%;
 }
 
 
-/* Styl dla pierwszego punktu */
-.punkt1 {
-  background-image: url("./assets/phone_in.svg");
 
-}
-
-/* Styl dla drugiego punktu */
-.punkt2 {
-  background-image: url("./assets/phone_out.svg");
-}
-
-/* Styl dla trzeciego punktu */
-.punkt3 {
-  background-image: url("./assets/phone_missed.svg");
-}
-
-li{
-
-padding: 1% 0 2% 30%;
-list-style: none;
-
-background-repeat: no-repeat;
-background-position: left center;
-background-size: 20%;
-color: #D4D4D4;
- 
-
-
-
-
-
-
-}
 
 .map_test{
 
