@@ -4,9 +4,9 @@ import Topbar from "../components/Topbar";
 import ContactsMini from "../components/ContactsMini";
 import ButtonsMini from "../components/ButtonsMini";
 
-import "../index.css"; // Zaimportuj plik CSS dla komponentu 
+import "../index.css"; // Zaimportuj plik CSS dla komponentu
 import "../css/HomeScreen.css";
-import map from "../assets/map_test.png";
+import MiniMap from "../components/MiniMap";
 
 
 const HomeScreen = () => {
@@ -18,7 +18,7 @@ const HomeScreen = () => {
       <Topbar />
       <div className="tiles">
         <div className="mini_map">
-          <img src={map} alt="mini_map" className="map_test" />
+          <MiniMap />
         </div>
         <div className="radio_mini"></div>
         <ContactsMini />

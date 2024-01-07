@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Projekt React z użyciem Tauri
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Wymagania
 
-## Available Scripts
+Przed rozpoczęciem pracy nad projektem upewnij się, że masz zainstalowane następujące narzędzia:
 
-In the project directory, you can run:
+- Node.js (zalecana wersja LTS)
+- npm (Node Package Manager) lub yarn
 
-### `npm start`
+## Instalacja
+1. Przejdź do folderu projektu:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    ```bash
+    cd nazwa_projektu
+    ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. Zainstaluj zależności przy użyciu npm lub yarn:
 
-### `npm test`
+    ```bash
+    npm install
+    # lub
+    yarn install
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Zainstaluj Tauri globalnie, jeśli nie jest zainstalowany:
 
-### `npm run build`
+    ```bash
+    npm install -g tauri
+    # lub
+    yarn global add tauri
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Uruchamianie
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Aby uruchomić aplikację w trybie deweloperskim, wykonaj następujące kroki:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Uruchom aplikację React:
 
-### `npm run eject`
+    ```bash
+    npm start
+    # lub
+    yarn start
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. W osobnym oknie terminala, uruchom Tauri:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```bash
+    npm run tauri dev
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+# Struktura folderów które warto znać
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Oto krótki opis zawartości poszczególnych folderów w projekcie:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## `/src`
 
-### Code Splitting
+W tym folderze znajduje się kod źródłowy aplikacji React. Zawiera pliki i foldery związane bezpośrednio z aplikacją frontendową.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## `/src/pages`
 
-### Analyzing the Bundle Size
+Tutaj są wszystkie nasze "podstrony", każdy edytuje swoją.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## `/src/css`
 
-### Making a Progressive Web App
+Tutaj można utworzyć css do swojej podstrony
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### `/src/assets`
 
-### Advanced Configuration
+Tutaj jest miejsce na wszystkie użyte assety
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### `/src/components`
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Tutaj można tworzyć komponenty dla swoich podstron.
