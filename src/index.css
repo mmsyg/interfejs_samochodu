@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
-
-
 body {
   margin: 0;
   color: black;
@@ -13,35 +11,31 @@ body {
   align-items: center;
 }
 
-
 .navbar {
   position: fixed;
-  left:0px;
+  left: 0px;
   height: 100%;
   width: 7%;
   background-color: #303945;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
 
-.nav_buttons{
- 
+.nav_buttons {
   height: 80%;
   width: 100%;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
-.tiles{
-
+.tiles {
   position: fixed;
-  left:7%;
-  top:3.5%;
+  left: 7%;
+  top: 3.5%;
 }
-.mini_map{
-  background-color: #37485D;
+.mini_map {
+  background-color: #37485d;
   border-radius: 35px;
   position: fixed;
   height: 91%;
@@ -49,19 +43,20 @@ body {
   margin: 2%;
 }
 
-.radio_mini{
-  background-color: #37485D;
+.radio_mini {
+  background-color: #37485d;
   border-radius: 35px;
   position: fixed;
   left: 50%;
   width: 47%;
   height: 45%;
   margin-top: 2%;
-  
+  display: flex;
+  align-items: center;
 }
 
-.contacts_mini{
-  background-color: #37485D;
+.contacts_mini {
+  background-color: #37485d;
   border-radius: 35px;
   position: fixed;
   left: 50%;
@@ -69,11 +64,10 @@ body {
   height: 45%;
   top: 50%;
   margin-top: 2%;
-  
 }
 
-.buttons_mini{
-  background-color: #37485D;
+.buttons_mini {
+  background-color: #37485d;
   border-radius: 35px;
   position: fixed;
   left: 70%;
@@ -81,86 +75,74 @@ body {
   height: 45%;
   top: 50%;
   margin-top: 2%;
-  display:flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-
 }
 
-.top_bar{
-
+.top_bar {
   position: fixed;
   left: 7%;
   top: 0;
   width: 100%;
   height: 3.5%;
-  background-color: #D4D4D4;
-  display:flex;
+  background-color: #d4d4d4;
+  display: flex;
   align-items: center;
-
-
 }
-.date{
-
-  color: #37485D;
+.date {
+  color: #37485d;
   font-weight: bold;
   font-size: larger;
 }
 
 .time {
-  color: #37485D;
+  color: #37485d;
   position: relative;
-  
+
   left: 37%;
   font-weight: bold;
-  font-size:x-large;
+  font-size: x-large;
 }
 
-.button{
+.button {
   background-color: #303945;
   border-radius: 35px;
   width: 27%;
   height: 28%;
   margin-bottom: 2%;
   margin-top: 2%;
-  margin-left:  2%;
-display: flex;
-align-items: center;
+  margin-left: 2%;
+  display: flex;
+  align-items: center;
   justify-content: center;
-
 }
 
-.button2{
+.button2 {
   background-color: #303945;
   border-radius: 35px;
   width: 61.5%;
   height: 28%;
-  margin-left:  2%;
-  display:flex;
+  margin-left: 2%;
+  display: flex;
   align-items: center;
   justify-content: center;
-
-    
- 
-
 }
 
-.arrow_up{
- position: relative;
- margin-left: 5%;
+.arrow_up {
+  position: relative;
+  margin-left: 5%;
   height: 70%;
   width: 30%;
-   
-  }
+}
 
-.arrow_down{
-rotate: 180deg;
-height: 70%;
-width: 30%;
-position: relative;
-margin-right: 5%;
- 
+.arrow_down {
+  rotate: 180deg;
+  height: 70%;
+  width: 30%;
+  position: relative;
+  margin-right: 5%;
 }
 
 /* Dodaj animację */
@@ -169,24 +151,20 @@ margin-right: 5%;
   transition: transform 0.05s ease-in-out;
 }
 
-.degree{
+.degree {
   font-size: 320%;
-  color: #D4D4D4;
+  color: #d4d4d4;
   font-weight: bolder;
 }
 
-.nav_img{
-
+.nav_img {
   height: 70%;
   width: 70%;
-
 }
-
 
 /* Styl dla pierwszego punktu */
 .punkt1 {
   background-image: url("./assets/phone_in.svg");
-
 }
 
 /* Styl dla drugiego punktu */
@@ -199,33 +177,31 @@ margin-right: 5%;
   background-image: url("./assets/phone_missed.svg");
 }
 
-li{
+li {
+  padding: 1% 0 2% 30%;
+  list-style: none;
 
-padding: 1% 0 2% 30%;
-list-style: none;
-
-background-repeat: no-repeat;
-background-position: left center;
-background-size: 20%;
-color: #D4D4D4;
- 
-
-
-
-
-
-
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 20%;
+  color: #d4d4d4;
 }
 
-.map_test{
-
+.map_test {
   width: 90%;
   height: 90%;
-  margin:5%;
+  margin: 5%;
 }
 
-.icon{
- height: 80%;
- width:60%;
-
+.icon {
+  height: 80%;
+  width: 60%;
+}
+.radio_mini img {
+  height: 30vh;
+  width: 30vh;
+  border-radius: 12px;
+  margin-top: 3%;
+  margin-left: 10%;
+  margin-right: 3vw;
 }
