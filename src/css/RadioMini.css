@@ -1,0 +1,38 @@
+/* RadioMini.css */
+.current-playing-info-link {
+  text-decoration: none;
+}
+.current-playing-info {
+  display: flex;
+  align-items: center;
+  background-color: #37485d;
+  border-radius: 12px;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.text-info {
+  display: flex;
+  flex-direction: column;
+}
+.current-playing-info:hover {
+  text-decoration: none; /* Usuń podkreślenie na hoverze */
+}
+.current-playing-info:focus,
+.current-playing-info:active {
+  outline: none; /* Usuń domyślny outline na focus i active */
+}
+.station-name {
+  font-size: 2.5em; /* Dostosuj rozmiar czcionki według potrzeb */
+
+  white-space: nowrap;
+}
+
+.text-info h2,
+.text-info p {
+  margin: 0;
+}
+.text-info p {
+  font-size: 1.5em;
+}

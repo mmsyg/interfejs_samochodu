@@ -1,0 +1,91 @@
+.radio_screen {
+  padding: 20px;
+}
+.station-list-container {
+  position: fixed;
+  height: 60vh;
+  width: 7%;
+  background-color: #37485d;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10%;
+  margin-top: 5%;
+  border-radius: 15px;
+}
+
+.station-list {
+  list-style: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.station-list li {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.station-list li img {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.music-player {
+  background-color: #37485d;
+  padding: 20px;
+  width: 80%;
+  height: 80vh;
+  /* Lub inna wartość, dostosuj według własnych preferencji */
+  color: #d4d4d4;
+  margin-left: auto;
+  margin-top: 5%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Radio.css */
+
+.station-logo img {
+  width: 15vw; /* Dostosuj szerokość do preferencji */
+  height: 15vw; /* Dostosuj wysokość do preferencji */
+  /* Dodatkowe style, jeśli są potrzebne */
+}
+.station-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.arrow-button {
+  width: 4vw; /* Dostosuj szerokość strzałki do preferencji */
+  height: 4vw; /* Dostosuj wysokość strzałki do preferencji */
+  cursor: pointer;
+}
+.station-name {
+  font-size: 5em; /* Dostosuj rozmiar czcionki do preferencji */
+  font-weight: bold; /* Pogrubienie tekstu */
+  margin-bottom: 0.2em; /* Dostosuj margines dolny do preferencji */
+}
+.now-playing {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.2em;
+  margin-top: -2em; /* Zmniejsz margines górny, aby podnieść napis trochę do góry */
+}
+.current-song {
+  font-size: 1.2em; /* Zmniejsz lub zwiększ wartość, aby dostosować rozmiar tekstu */
+  margin-top: -0.5em; /* Opcjonalnie zmniejsz margines górny */
+}
+.current-song strong {
+  font-weight: bold; /* Ustawia pogrubienie dla słów "Artist" i "Song" */
+}
