@@ -6,7 +6,6 @@
   height: 100%;
 }
 
-
 .choose_bar {
   position: fixed;
   left: 18%;
@@ -29,7 +28,7 @@
   justify-content: center;
   align-items: center;
   display: flex;
-
+  font-size: 1.5vw;
 }
 .phone_keyboard {
   position: fixed;
@@ -41,45 +40,65 @@
 
 .keyboard_numeric {
   position: relative;
-    width: 41.5%;
-min-height: 71%;
+  width: 41.5%;
+  min-height: 71%;
   left: 5%;
   top: 7%;
   background-color: #37485d;
   border-radius: 35px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Tworzy trzy kolumny o równych szerokościach */
-    justify-content: center;
-    align-items: center;
-    
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Tworzy trzy kolumny o równych szerokościach */
+  justify-content: center;
+  align-items: center;
 }
 
-.num_button{
-    background-color: #303945;
-    width: 80%;
-    height: 70%;
-    margin-left: 10%;
-   position: relative;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    border-radius: 35px;
-    color: #E8E8E8;
-    font-weight: bold;
-    font-size: 3vw;
-
-
-
+.num_button {
+  background-color: #303945;
+  width: 80%;
+  height: 70%;
+  margin-left: 10%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 35px;
+  color: #e8e8e8;
+  font-weight: bold;
+  font-size: 3vw;
 }
-.number{
-    position:fixed;
-    width: 41.5%;
+
+.num_button {
+  background-color: #303945;
+  width: 80%;
+  height: 70%;
+  margin-left: 10%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 35px;
+  color: #e8e8e8;
+  font-weight: bold;
+  font-size: 3vw;
+}
+
+.num_button:active {
+  transition: transform 100ms;
+  transform: scale(0.95); /* Lekkie zmniejszenie rozmiaru */
+  background-color: #222831; /* Zmiana koloru tła */
+}
+.number {
+  position: fixed;
+  width: 41.5%;
   height: 18%;
   left: 55%;
   top: 7%;
   background-color: #37485d;
   border-radius: 35px;
-  color: #E8E8E8;
+  color: #e8e8e8;
   font-weight: bold;
   font-size: 4vw;
   letter-spacing: 20px;
@@ -87,22 +106,21 @@ min-height: 71%;
   align-items: center;
   display: flex;
 }
-.suggestions{
-    position:fixed;
-    width: 41.5%;
+.suggestions {
+  position: fixed;
+  width: 41.5%;
   min-height: 18%;
   left: 55%;
   top: 27%;
   background-color: #37485d;
   border-radius: 35px;
- 
+
   justify-content: center;
   align-items: center;
-  display:inline-table;
+  display: inline-table;
 }
 
-
-.suggestion_single{
+.suggestion_single {
   position: relative;
   background-color: #303945;
   border-radius: 35px;
@@ -113,174 +131,179 @@ min-height: 71%;
   margin-left: 4%;
   justify-content: center;
   align-items: center;
-  display:inline-flex;
+  display: inline-flex;
 }
-.text{
+
+.suggestion_single:active {
+  transition: transform 100ms;
+  transform: scale(0.95); /* Lekkie zmniejszenie rozmiaru */
+  background-color: #222831; /* Zmiana koloru tła */
+}
+.text {
   display: flex;
-  flex-direction: repeat(1, 1fr); 
+  flex-direction: repeat(1, 1fr);
   justify-content: center;
   align-content: center;
 }
-.noSuggestions{
-  position:relative;
-  color: #E8E8E8;
+.noSuggestions {
+  position: relative;
+  color: #e8e8e8;
   font-weight: bold;
   font-size: 1.5vw;
-
-
 }
 
-.name{
-  position:relative;
-  color: #E8E8E8;
+.name {
+  position: relative;
+  color: #e8e8e8;
   font-weight: bold;
   font-size: 1.3vw;
   margin-left: 2%;
-  
-  
 }
 
-.phoneNumber{
-position:relative;
+.phoneNumber {
+  position: relative;
 
-margin-left: 32%;
-color: #E8E8E8;
-font-size: 0.9vw;
-
-
+  margin-left: 32%;
+  color: #e8e8e8;
+  font-size: 0.9vw;
 }
-.ring{
-    border-radius: 35px;
-    position: fixed;
-    top:64%;
-    left:55%;
-    height: 14%;
-    width: 41.5%;
-    background-color: #37485d;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-   
-  
+.ring {
+  border-radius: 35px;
+  position: fixed;
+  top: 64%;
+  left: 55%;
+  height: 14%;
+  width: 41.5%;
+  background-color: #37485d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.ring_button{
-    height: 50%;
-    width: 30%;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #248E1B;
-
+.ring_button {
+  height: 90%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #248e1b;
+  border-radius: 35px;
 }
 
-.call{
+.ring_button:active {
+  transition: transform 100ms;
+  transform: scale(0.95); /* Lekkie zmniejszenie rozmiaru */
+  background-color: #134e0d; /* Zmiana koloru tła */
+}
+
+.call {
   position: fixed;
   left: 7%;
-  top:3.5%;
- margin: 1.5%;
+  top: 3.5%;
+  margin: 1.5%;
   width: 90%;
   height: 90%;
   border-radius: 35px;
   background-color: #37485d;
-z-index: 2;
+  z-index: 2;
 }
 
-.photo_name{
+.photo_name {
   position: fixed;
-  display:flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 55%;
-    width: 90%;
-    margin-left: 5%;
-    
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 55%;
+  width: 90%;
+  margin-left: 5%;
 }
-.image{
+.image {
   position: relative;
 
   background-color: #303945;
   height: 90%;
   width: 31%;
   border-radius: 35px;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
-.name_numer{
+.name_numer {
+  width: 70%;
+  display: flex;
 
-width: 70%;
-display: flex;
-
-flex-direction: column;
-align-items: center;
-gap:2%;
+  flex-direction: column;
+  align-items: center;
+  gap: 2%;
 }
 
-.buttons{
-position: fixed;
-top:57%;
-display:flex;
+.buttons {
+  position: fixed;
+  top: 57%;
+  display: flex;
 
-align-items: center;
-justify-content: center;
-width: 90%;
-height: 40%;
-gap: 6%;
-
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 40%;
+  gap: 6%;
 }
-.red_button{
-position: relative;
+.red_button {
+  position: relative;
 
-  background-color: #EA1E3B;
+  background-color: #ea1e3b;
   width: 15%;
   height: 60%;
   border-radius: 35px;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
- 
 }
 
-.button3{
+.button3 {
   position: relative;
 
   background-color: #303945;
   width: 15%;
   height: 60%;
   border-radius: 35px;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
+.button3.active {
+  position: relative;
 
-.icon{
-
+  background-color: #303945;
+  width: 15%;
+  height: 60%;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon {
   width: 75%;
   height: 80%;
 }
 
-
-.name_call{
-  color: #E8E8E8;
+.name_call {
+  color: #e8e8e8;
   font-size: 4vw;
-  margin:0;
-
+  margin: 0;
 }
-.number_call{
-
-  color: #E8E8E8;
+.number_call {
+  color: #e8e8e8;
   font-size: 2.5vw;
-  margin:0;
+  margin: 0;
 }
 
-.stoper_call{
-
-  color: #E8E8E8;
-font-size: 4vw;
-margin:6%;
+.stoper_call {
+  color: #e8e8e8;
+  font-size: 4vw;
+  margin: 6%;
 }
 
-.contacts{
+.contacts {
   border-radius: 35px;
   position: fixed;
   left: 7%;
@@ -294,24 +317,20 @@ margin:6%;
 
   align-items: center;
   justify-content: center;
-
-
-
 }
 
-
-
-.tiles2{
+.tiles2 {
   position: relative;
-  display:flex;
-  
+  display: flex;
+
   justify-content: center;
+  top: 3%;
   height: 90%;
   width: 90%;
-gap:15%
+  gap: 15%;
 }
 
-.tile2{
+.tile2 {
   background-color: #303945;
   position: relative;
   min-height: 70%;
@@ -319,65 +338,160 @@ gap:15%
   border-radius: 35px;
 }
 
-
 .pkt {
   background-image: url("../assets/people.png");
   width: 70%;
-margin-bottom: 8%;
+  margin-bottom: 8%;
   padding: 1% 0 2% 18%;
 
-
   background-size: 15%;
-  color: #D4D4D4;
-
+  color: #d4d4d4;
 
   align-items: center;
-  display:inline-flex;
+  display: inline-flex;
 
-  left:0%;
-  right:1%
+  left: 0%;
+  right: 1%;
 }
 
-.name_contact{
-  position:relative;
-  color: #E8E8E8;
+.pkt:active {
+  transition: transform 100ms;
+  transform: scale(0.98); /* Lekkie zmniejszenie rozmiaru */
+  /* Zmiana koloru tła */
+}
+
+.name_contact {
+  position: relative;
+  color: #e8e8e8;
   font-weight: bold;
   font-size: 1.1vw;
- 
-  
-  
 }
 
-.phoneNumber_contact{
-position:absolute;
-right: 4%;
-
-color: #E8E8E8;
-font-size: 0.8vw;
-
-
-
-}
-
-
-.arrow_right{
+.phoneNumber_contact {
   position: absolute;
-  left:2% ;
-  top:40%;
+  right: 4%;
+
+  color: #e8e8e8;
+  font-size: 0.8vw;
+}
+
+.arrow_right {
+  position: absolute;
+  left: 2%;
+  top: 40%;
   width: 3%;
   height: 12%;
-
-
-
 }
 
-.arrow_left{
+.arrow_left {
   position: absolute;
-  right:2% ;
-  top:40%;
-width: 3%;
-height: 12%;
+  right: 2%;
+  top: 40%;
+  width: 3%;
+  height: 12%;
+}
+
+.punkt1_v2 {
+  background-image: url("../assets/phone_in.svg");
+
+  width: 70%;
+  margin-bottom: 8%;
+  padding: 1% 0 2% 18%;
+
+  background-size: 15%;
+  color: #d4d4d4;
+
+  align-items: center;
+  display: inline-flex;
+
+  left: 0%;
+  right: 1%;
+}
+
+.punkt2_v2 {
+  background-image: url("../assets/phone_out.svg");
+
+  width: 70%;
+  margin-bottom: 8%;
+  padding: 1% 0 2% 18%;
+
+  background-size: 15%;
+  color: #d4d4d4;
+
+  align-items: center;
+  display: inline-flex;
+
+  left: 0%;
+  right: 1%;
+}
+
+.punkt3_v2 {
+  background-image: url("../assets/phone_missed.svg");
+
+  width: 70%;
+  margin-bottom: 8%;
+  padding: 1% 0 2% 18%;
+
+  background-size: 15%;
+  color: #d4d4d4;
+
+  align-items: center;
+  display: inline-flex;
+
+  left: 0%;
+  right: 1%;
+}
+.punkt3_v2:active {
+  transition: transform 100ms;
+  transform: scale(0.98); /* Lekkie zmniejszenie rozmiaru */
+}
+.punkt3_v2:active {
+  transition: transform 100ms;
+  transform: scale(0.98); /* Lekkie zmniejszenie rozmiaru */
+}
+.punkt3_v2:active {
+  transition: transform 100ms;
+  transform: scale(0.98); /* Lekkie zmniejszenie rozmiaru */
+}
+.simple-keyboard {
+  position: absolute !important;
+  left: -10% !important;
+  bottom: -5% !important;
+  width: 30% !important;
+  z-index: 100;
+  background-color: #37485d !important;
+  color: #d4d4d4 !important;
+}
+
+.simple-keyboard .hg-button {
+  background-color: #303945 !important;
+}
+
+.search {
+  position: fixed;
+  left: 46%;
+  top: 8%;
+  z-index: 100;
+  border-radius: 35px;
+  height: 3%;
+  min-width: 10%;
+  font-size: 1vw;
+  border: 4px solid #303945;
+}
+
+.choose_bar_button.active {
+  background-color: #303945; /* Zmiana koloru tła dla aktywnego przycisku */
+  color: white; /* Zmiana koloru tekstu */
+  /* Możesz dodać inne style, takie jak cień, obramowanie itp. */
+}
 
 
+.button3.pressed1 {
+  background-color: #11549b; /* Przykładowy kolor dla naciśniętego przycisku */
+  /* Dodaj inne style, które chcesz zastosować */
+}
 
+.button3.pressed2 {
+  background-color: #11549b; /* Przykładowy kolor dla naciśniętego przycisku */
+  /* Dodaj inne style, które chcesz zastosować */
 }

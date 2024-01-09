@@ -3,13 +3,16 @@ import peopleData from './contacts.json';
 import phone from "../../assets/5.svg";
 import {Link } from 'react-router-dom';
 
-const Keyboard = ({ isCalling, setIsCalling }) => {
+const Keyboard = ({ isCalling, setIsCalling,phoneNumber,setPhoneNumber }) => {
 
     const toggleState = () => {
-        setIsCalling(!isCalling);
+        setPhoneNumber(input);
+        if(input){
+        setIsCalling(!isCalling);}
+        
       };
 
-    const [input, setInput] = useState('');
+    const [input, setInput] = useState(phoneNumber);
     const [suggestions, setSuggestions] = useState([]);
     const maxLength = 9;
 
@@ -38,6 +41,7 @@ const Keyboard = ({ isCalling, setIsCalling }) => {
         let display = input.padEnd(maxLength, '_');
         return display.split('').map((char, index) => <span key={index}>{char}</span>);
     };
+
 
     useEffect(() => {
         if (input) {
@@ -75,7 +79,7 @@ const Keyboard = ({ isCalling, setIsCalling }) => {
 
             {/* Display suggestions with names */}
             <div className="suggestions">
-                <p className="">Podpowiedzi</p>
+              
                 {suggestions.length > 0 ? (
                     suggestions.map((suggestion, index) => (
                         <div key={index} className='suggestion_single' onClick={() => handleSuggestionClick(suggestion.phone)}>

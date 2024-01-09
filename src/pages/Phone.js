@@ -12,6 +12,8 @@ import Latest from "./phone/Latest"
 const Phone = () => {
   const [activeComponent, setActiveComponent] = useState("component2");
   const [isCalling, setIsCalling] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("123456789")
+  
   const handleLiClick = (component) => {
     setActiveComponent(component);
   }; 
@@ -26,21 +28,21 @@ const Phone = () => {
 
   },[isCalling])
   const Component0 = () => (
-  <Call isCalling={isCalling} setIsCalling={setIsCalling}/>
+  <Call phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} isCalling={isCalling} setIsCalling={setIsCalling}/>
 
+  );
+
+
+const Component1 = () => (
+   <Keyboard phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} isCalling={isCalling} setIsCalling={setIsCalling} />
   );
 
   const Component2 = () => (
-    <Latest />
-   );
-const Component1 = () => (
-   <Keyboard isCalling={isCalling} setIsCalling={setIsCalling} />
+    <Latest setPhoneNumber={setPhoneNumber} setActiveComponent={setActiveComponent} />
   );
-
-
   const Component3 = () => (
-    <Contacts />
-   );
+    <Contacts setPhoneNumber={setPhoneNumber} setActiveComponent={setActiveComponent} />
+  );
   return (
     <div className="phone_screen">
       <Navbar id={5} />
@@ -56,10 +58,19 @@ const Component1 = () => (
       
 
       <div className="choose_bar">
-        <div onClick={() => {handleLiClick("component1");}} className="choose_bar_button"><p>KLAWIATURA</p></div>
-        <div onClick={() => {handleLiClick("component2");}}className="choose_bar_button"><p>OSTATNIE</p></div>
-        <div onClick={() => {handleLiClick("component3");}} className="choose_bar_button"><p>KONTAKTY</p></div>
+      <div onClick={() => {handleLiClick("component1");}}
+           className={`choose_bar_button ${activeComponent === "component1" ? "active" : ""}`}>
+        <p>KLAWIATURA</p>
       </div>
+      <div onClick={() => {handleLiClick("component2");}}
+           className={`choose_bar_button ${activeComponent === "component2" ? "active" : ""}`}>
+        <p>OSTATNIE</p>
+      </div>
+      <div onClick={() => {handleLiClick("component3");}}
+           className={`choose_bar_button ${activeComponent === "component3" ? "active" : ""}`}>
+        <p>KONTAKTY</p>
+      </div>
+    </div>
     </div>
   );
 };

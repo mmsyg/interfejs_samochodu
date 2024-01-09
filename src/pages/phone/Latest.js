@@ -4,13 +4,22 @@ import left from "../../assets/arrow_left.png";
 import right from "../../assets/arrow_right.png";
 
 const getRandomClass = () => {
-    const classes = ['punkt1', 'punkt2', 'punkt3'];
+    const classes = ['punkt1_v2', 'punkt2_v2', 'punkt3_v2'];
     return classes[Math.floor(Math.random() * classes.length)];
   };
-const Latest = () => {
+const Latest = ({ setPhoneNumber, setActiveComponent }) => {
     const contactsPerTile = 6; //maksymalna liczba kontaktów na kafelek
     const maxTilesPerPage = 2; //maksymalna licba kafelków na stronę
     const [currentPage, setCurrentPage] = useState(0);
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const handleContactClick = (phone) => {
+      const phoneWithoutSpaces = phone.replace(/\s+/g, '');
+      setPhoneNumber(phoneWithoutSpaces);
+      setActiveComponent("component1"); // Zakładając, że "component1" to Keyboard
+  };
+
+  
 
   //Funkcja dzielaca kontakty na podtablice
   const chunkContacts = (contacts, size) =>
@@ -23,31 +32,50 @@ const Latest = () => {
     }, []);
    
       const reversedContacts = [...contactsData].reverse();
-    const tiles = chunkContacts(reversedContacts, contactsPerTile);
+// Filtruj kontakty przed ich podziałem
+const filteredContacts = contactsData
+  .filter(contact => contact.name.toLowerCase().includes(searchTerm.toLowerCase()))
+  .reverse(); 
 
-  // Podział kafelków na strony
+  const tiles = chunkContacts(filteredContacts, contactsPerTile);
   const pages = chunkContacts(tiles, maxTilesPerPage);
+
 
   //funkcje do nawigacji między stronami
   const goToNextPage = () => setCurrentPage(currentPage + 1);
   const goToPreviousPage = () => setCurrentPage(currentPage - 1);
+
   
-  return (
+
+  
+  
+  return (<div>  <input
+  type="text"
+  placeholder="Szukaj..."
+  value={searchTerm}
+  onChange={(e) => setSearchTerm(e.target.value)}
+  className='search'
+/>
     <div className="contacts">
-      <div className="tiles2">
-      {pages[currentPage].map((tile, tileIndex) => (
-          <div className="tile2" key={tileIndex}>
-            <ul>
-              {tile.map((contact, contactIndex) => (
-                <li className={getRandomClass()} key={contactIndex}>
-                  <p className="name_contact">{contact.name}</p>
-                  <p className="phoneNumber_contact">{contact.phone}</p>
-                </li> 
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+    
+    <div className="tiles2">
+            {pages[currentPage] ? (
+                pages[currentPage].map((tile, tileIndex) => (
+                    <div className="tile2" key={tileIndex}>
+                        <ul>
+                            {tile.map((contact, contactIndex) => (
+                                <li className={getRandomClass()} key={contactIndex} onClick={() => handleContactClick(contact.phone)}>
+                                    <p className="name_contact">{contact.name}</p>
+                                    <p className="phoneNumber_contact">{contact.phone}</p>
+                                </li> 
+                            ))}
+                        </ul>
+                    </div>
+                ))
+            ) : (
+                <p>Brak danych do wyświetlenia</p>
+            )}
+        </div>
       <div className="pagination">
         {currentPage > 0 && (
           <img className='arrow_right' src={left} alt='left' onClick={goToPreviousPage}/>
@@ -56,7 +84,7 @@ const Latest = () => {
         <img className='arrow_left' src={right} alt='right' onClick={goToNextPage}/>
         )}
       </div>
-    </div>
+    </div></div>
   );
 };
 

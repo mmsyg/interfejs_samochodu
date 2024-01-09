@@ -30,6 +30,12 @@
     width: 30%;
     overflow: hidden;
 }
+#keyboard-container{
+    z-index: 1000;
+    left: 38%;
+    bottom: 6%;
+    position: fixed;
+}
 
 #search-input {
     height: 20px;
