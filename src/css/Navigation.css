@@ -33,7 +33,7 @@
 }
 
 #search-input {
-    height: 20px;
+    height: 50px;
     margin: 0.5rem;
     width: 50%;
     padding: 8px;
@@ -67,7 +67,7 @@
 }
 #mapNavBar{
     padding: 6px;
-    height: 64px;
+    height: 94px;
     position: absolute;
     top: 30px;
     left: 30px;
@@ -103,7 +103,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 0;
+    padding: 15px 5px;
     background-color: #f4f4f4;
     background-color: rgba(76, 76, 76, 0.9);
     z-index: 999;
@@ -114,8 +114,9 @@
 #routeAccept,
 #routeCancel,
 #showRoute {
-    margin: 0 10px; /* Miejsce pomiędzy przyciskami */
-    padding: 10px 20px;
+    height: 70px;
+    margin: 0 10px;
+    padding: 15px 20px;
     border: none;
     cursor: pointer;
     border-radius: 35px;
@@ -124,8 +125,8 @@
 }
 
 #routeAccept {
-    background-color: #28a745; /* Zielony kolor dla przycisku Accept */
-    color: white; /* Biały kolor tekstu */
+    background-color: #28a745;
+    color: white;
 }
 
 #routeAccept:hover {
@@ -157,8 +158,8 @@
     align-items: center;
     font-size: 1.5vw;
     left: 32%;
-    top: 8%;
-    height: 72%;
+    top: 5%;
+    height: 82%;
     position: absolute;
     z-index: 1;
     background-color: #C2C3C7;
@@ -176,7 +177,7 @@
 #cancelAcceptedRoute {
     position: absolute;
     width: 15%;
-    height: 82%;
+    height: 89%;
     left: 84%;
     font-size: 1.5vw;
     background-color: #E74C3C;
@@ -286,10 +287,10 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    height: 40px;
+    height: 68px;
     margin: 0.5rem;
     width: 14%;
-    padding: 8px;
+    padding: 4px;
     border-radius: 35px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     outline: none;
@@ -327,8 +328,9 @@
 
 #add-star,
 #add-home{
+    height: 70px;
     margin: 0 10px;
-    padding: 10px 20px;
+    padding: 15px 20px;
     border: none;
     cursor: pointer;
     border-radius: 35px;
@@ -342,14 +344,14 @@
 }
 
 #add-star{
-    padding-left: 4rem;
+    padding-left: 5rem;
     background-image: url('../assets/star.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left;
 }
 #add-home{
-    padding-left: 4rem;
+    padding-left: 5rem;
     background-image: url('../assets/home.svg');
     background-size: contain;
     background-repeat: no-repeat;

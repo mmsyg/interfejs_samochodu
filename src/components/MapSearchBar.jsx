@@ -163,6 +163,7 @@ const MapSearchBar = ({map}) => {
         setQuery(place.place_name);
         setSuggestions([]);
         setShowStarPlaces(false);
+        setShowHomePlaces(false);
     };
 
     useEffect(() => {
@@ -399,7 +400,7 @@ const MapSearchBar = ({map}) => {
             {selectedPlace && !routeAsk && (<button id="showRoute" onClick={() => {
                 ShowRoute({map, end: selectedPlace.center, setRouteData, setRouteSteps});
                 setRouteAsk(true);
-            }}>Pokaż trasę</button>)}
+            }}>Trasa</button>)}
 
             <button id="routeAccept" onClick={() => {
                 !routeAsk && ShowRoute({map, end: selectedPlace.center, setRouteData, setRouteSteps});
