@@ -291,7 +291,7 @@ const MapSearchBar = ({map}) => {
             <button
                 id="star-tab"
                 onClick={() => {
-                    setShowStarPlaces(true);
+                    setShowStarPlaces(!showStarPlaces);
                     setShowHomePlaces(false);
                     setSearchBarFocus(1);
                 }}
@@ -302,7 +302,7 @@ const MapSearchBar = ({map}) => {
             ></button>
 
             <button id="home-tab" onClick={() => {
-                setShowHomePlaces(true);
+                setShowHomePlaces(!showHomePlaces);
                 setShowStarPlaces(false);
                 setSearchBarFocus(2)
             }} className={searchBarFocus === 2 ? 'focused-tab' : ''}
