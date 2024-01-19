@@ -15,7 +15,6 @@ const Contacts = ({ setPhoneNumber, setActiveComponent }) => {
         const phoneWithoutSpaces = phone.replace(/\s+/g, '');
         setPhoneNumber(phoneWithoutSpaces);
         setActiveComponent("component1"); // Zakładając, że "component1" to Keyboard
-        //sorry ale az tak ^^ mi sie nie chce
         setShowKeyboard(false);
     };
 

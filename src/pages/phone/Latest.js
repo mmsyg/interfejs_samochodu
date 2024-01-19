@@ -4,10 +4,8 @@ import left from "../../assets/arrow_left.png";
 import right from "../../assets/arrow_right.png";
 import Keyboard from "react-simple-keyboard";
 
-const getRandomClass = () => {
-    const classes = ['punkt1_v2', 'punkt2_v2', 'punkt3_v2'];
-    return classes[Math.floor(Math.random() * classes.length)];
-  };
+
+
 const Latest = ({ setPhoneNumber, setActiveComponent }) => {
     const contactsPerTile = 6; //maksymalna liczba kontaktów na kafelek
     const maxTilesPerPage = 2; //maksymalna licba kafelków na stronę
@@ -15,12 +13,20 @@ const Latest = ({ setPhoneNumber, setActiveComponent }) => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleContactClick = (phone) => {
-      const phoneWithoutSpaces = phone.replace(/\s+/g, '');
-      setPhoneNumber(phoneWithoutSpaces);
-      setActiveComponent("component1"); // Zakładając, że "component1" to Keyboard
-  };
+        const phoneWithoutSpaces = phone.replace(/\s+/g, '');
+        setPhoneNumber(phoneWithoutSpaces);
+        setActiveComponent("component1"); // Zakładając, że "component1" to Keyboard
+        setShowKeyboard(false);
+    };
 
-  
+    const getRandomClass = () => {
+        const classes = ['punkt1_v2', 'punkt2_v2', 'punkt3_v2'];
+        return classes[Math.floor(Math.random() * classes.length)];
+    };
+    const [randomClasses, setRandomClasses] = useState(() => {
+        const initialClasses = Array.from({ length: contactsData.length }, getRandomClass);
+        return initialClasses;
+    });
 
   //Funkcja dzielaca kontakty na podtablice
   const chunkContacts = (contacts, size) =>
@@ -102,10 +108,10 @@ const filteredContacts = contactsData
                     <div className="tile2" key={tileIndex}>
                         <ul>
                             {tile.map((contact, contactIndex) => (
-                                <li className={getRandomClass()} key={contactIndex} onClick={() => handleContactClick(contact.phone)}>
+                                <li className={randomClasses[contactIndex]} key={contactIndex} onClick={() => handleContactClick(contact.phone)}>
                                     <p className="name_contact">{contact.name}</p>
                                     <p className="phoneNumber_contact">{contact.phone}</p>
-                                </li> 
+                                </li>
                             ))}
                         </ul>
                     </div>
