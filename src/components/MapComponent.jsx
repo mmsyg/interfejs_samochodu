@@ -13,6 +13,7 @@ const MapComponent = () => {
     const mapContainerRef = useRef(null);
     const mapRef = useRef(null);
     const [retryCount, setRetryCount] = useState(0);
+    const [mapHasBeenMoved, setMapHasBeenMoved] = useState(false);
 
     useEffect(() => {
         //if (map.current) return;
@@ -41,10 +42,21 @@ const MapComponent = () => {
             element: createMarkerElement(carIcon),
             anchor: 'center'
         })
-                .setLngLat([ 19.906381, 50.029823])
+            .setLngLat([19.906381, 50.029823])
             .addTo(map);
 
-
+        map.on('move', () => {
+            const currentCenter = mapRef.current.getCenter();
+            const initialCenter = new mapboxgl.LngLat(19.9063, 50.0298);
+            if (
+                Math.abs(currentCenter.lng - initialCenter.lng) < 0.0001 &&
+                Math.abs(currentCenter.lat - initialCenter.lat) < 0.0001
+            ) {
+                setMapHasBeenMoved(false);
+            } else {
+                setMapHasBeenMoved(true);
+            }
+        });
 
 
         mapRef.current = map
@@ -52,6 +64,7 @@ const MapComponent = () => {
             map.remove();
         };
     }, []);
+
 
     function createMarkerElement(imageSrc) {
         const element = document.createElement('div');
@@ -63,9 +76,25 @@ const MapComponent = () => {
         return element;
     }
 
+    const handleCenterMap = () => {
+        mapRef.current.flyTo({
+            center: [19.9063, 50.0298],
+            zoom: 17,
+            essential: true,
+        });
+    };
+
     return (
         <div id="map-wrapper">
             <div id="map-container"></div>
+            {mapRef.current && mapHasBeenMoved && (
+                <div id="center-map-container" onClick={handleCenterMap}>
+                    <img src={carIcon} alt="Yellow Car" className="car-icon"/>
+                    <span id="center-map-button" >
+                        Wyśrodkuj
+                    </span>
+                </div>
+            )}
             {mapRef.current ? (
                 <div id="mapNavBar">
                     <MapSearchBar map={mapRef.current}/>

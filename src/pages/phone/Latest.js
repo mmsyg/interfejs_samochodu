@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, {useRef, useState} from 'react';
 import contactsData from './contacts.json'
 import left from "../../assets/arrow_left.png";
 import right from "../../assets/arrow_right.png";
+import Keyboard from "react-simple-keyboard";
 
 const getRandomClass = () => {
     const classes = ['punkt1_v2', 'punkt2_v2', 'punkt3_v2'];
@@ -45,15 +46,52 @@ const filteredContacts = contactsData
   const goToNextPage = () => setCurrentPage(currentPage + 1);
   const goToPreviousPage = () => setCurrentPage(currentPage - 1);
 
-  
+    //klawiatura
 
+    const [layout, setLayout] = useState("default");
+    const keyboard = useRef();
+    const [showKeyboard, setShowKeyboard] = useState(false);
+
+    const toggleKeyboard = () => {
+        setShowKeyboard(!showKeyboard);
+    };
+
+    const handleInput = (event) => {
+        const inputValue = event.target.value;
+        setSearchTerm(inputValue);
+        keyboard.current.setInput(inputValue);
+    };
+
+    const handleKeyboardInput = (inputValue) => {
+        setSearchTerm(inputValue);
+        keyboard.current.setInput(inputValue);
+    };
+    const onKeyPress = button => {
+        if (button === "{shift}" || button === "{lock}") handleShift();
+        if (button === "{bksp}") handleBackspace();
+    };
+    const handleShift = () => {
+        const newLayoutName = layout === "default" ? "shift" : "default";
+        setLayout(newLayoutName);
+    };
+
+    const handleBackspace = () => {
+        if (searchTerm.length > 0) {
+            const newQuery = searchTerm.slice(0, -1);
+            setSearchTerm(newQuery);
+            keyboard.current.setInput(newQuery);
+        }
+    };
   
   
   return (<div>  <input
   type="text"
   placeholder="Szukaj..."
   value={searchTerm}
-  onChange={(e) => setSearchTerm(e.target.value)}
+  onChange={handleInput}
+  onFocus={() => {
+      setShowKeyboard(true);
+  }}
   className='search'
 />
     <div className="contacts">
@@ -84,7 +122,23 @@ const filteredContacts = contactsData
         <img className='arrow_left' src={right} alt='right' onClick={goToNextPage}/>
         )}
       </div>
-    </div></div>
+    </div>
+          {showKeyboard === true && (
+              <div id="contactsKeyboardContainer">
+
+                  <button id='contact-close-keyboard' onClick={toggleKeyboard} className="close-keyboard-button">
+                      Zamknij
+                  </button>
+
+                  <Keyboard
+                      keyboardRef={r => (keyboard.current = r)}
+                      layoutName={layout}
+                      onChange={handleKeyboardInput}
+                      onKeyPress={onKeyPress}
+                  />
+              </div>
+          )}
+  </div>
   );
 };
 

@@ -313,7 +313,7 @@ const MapSearchBar = ({map}) => {
 
 
             {suggestions.length > 0 && searchBarFocus === 0 && <div id="suggestions-list">
-                {suggestions.slice(0, 4).map((place, index) => (<div key={index} onClick={() => {
+                {suggestions.slice(0, 3).map((place, index) => (<div key={index} onClick={() => {
                     handleSelectPlace(place);
                     setInputFocused(false);
                 }}>
@@ -322,6 +322,7 @@ const MapSearchBar = ({map}) => {
             </div>}
 
             {showStarPlaces && searchBarFocus === 1 && (
+                (starPlaces.length > 0)?(
                 <div id="suggestions-list">
                     {starPlaces.slice((currentPageStar - 1) * 3, currentPageStar * 3).map((place, index) => (
                         <div key={index}>
@@ -346,10 +347,17 @@ const MapSearchBar = ({map}) => {
                             ))}
                         </div>
                     )}
-                </div>
+                </div>)
+                : (
+                <div id="suggestions-list">
+                <p style={{margin: '20px'}}>
+                    Trochę tu pusto, spróbuj wyszukać interesujące Cię miejsce, a następnie dodać je naciskając ikonkę gwiazdy na dolnym pasku.
+                </p>
+            </div>)
             )}
 
             {showHomePlaces && searchBarFocus === 2 && (
+                (homePlaces.length > 0)?(
                 <div id="suggestions-list">
                     {homePlaces.slice((currentPageHome - 1) * 3, currentPageHome * 3).map((place, index) => (
                         <div key={index}>
@@ -374,12 +382,18 @@ const MapSearchBar = ({map}) => {
                             ))}
                         </div>
                     )}
-                </div>
+                </div>)
+                    : (
+                        <div id="suggestions-list">
+                        <p style={{margin: '20px'}}>
+                        Trochę tu pusto, spróbuj wyszukać interesujące Cię miejsce, a następnie dodać je naciskając ikonkę domu na dolnym pasku.
+                        </p>
+                        </div>)
             )}
         </div>
 
 
-        {selectedPlace && (!routeAccepted) && <div id="bottomBar">
+        {selectedPlace && (!routeAccepted) && !inputFocused && <div id="bottomBar">
             {selectedPlace && !routeAsk && (<button id="showRoute" onClick={() => {
                 ShowRoute({map, end: selectedPlace.center, setRouteData, setRouteSteps});
                 setRouteAsk(true);
@@ -437,26 +451,21 @@ const MapSearchBar = ({map}) => {
             }}>Anuluj
             </button>}
         </div>}
-        <div id='keyboard-container'>
-            {inputFocused && searchBarFocus === 0 && (
+        {inputFocused && searchBarFocus === 0 && (
+            <div id='keyboard-container'>
                 <button id='close-keyboard' onClick={toggleKeyboard} className="close-keyboard-button">
                     Zamknij
                 </button>
-            )}
-            {inputFocused && searchBarFocus === 0 && (
                 <Keyboard
                     keyboardRef={r => (keyboard.current = r)}
                     layoutName={layout}
                     onChange={handleKeyboardInput}
                     onKeyPress={onKeyPress}
                 />
-            )}
-        </div>
+            </div>
+        )}
     </div>;
 
 };
 
 export default MapSearchBar;
-
-//Dodaj klawiaturę i może popracuj nad stylem,
-// potem git i będzie git tylko o tokenie nie zapomnij żeby ukryć

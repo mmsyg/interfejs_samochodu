@@ -10,6 +10,7 @@
     overflow: hidden;
     min-width: 900px;
     min-height: 400px;
+    font-size: 1.5vw;
 }
 #map-container {
     #position: fixed;
@@ -30,12 +31,6 @@
     width: 30%;
     overflow: hidden;
 }
-#keyboard-container{
-    z-index: 1000;
-    left: 38%;
-    bottom: 6%;
-    position: fixed;
-}
 
 #search-input {
     height: 20px;
@@ -53,6 +48,7 @@
     padding-left: 2rem;
     background-size: 1rem;
     background-repeat: no-repeat;
+    font-size: 1.3vw;
 }
 
 #search-input:focus {
@@ -76,7 +72,7 @@
     top: 30px;
     left: 30px;
     background-color: rgba(76, 76, 76, 0.9);
-    width: 94%;
+    min-width: 95.7%;
     border-radius: 35px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
@@ -89,7 +85,7 @@
     animation: fadeIn 0.5s forwards;
     animation-delay: 0.1s;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -99,11 +95,11 @@
 
 
 #bottomBar {
-    margin-left: 3%;
+    left: 53%;
     overflow: hidden;
     position: fixed;
-    bottom: 5.6%;
-    width: 80%;
+    bottom: 6%;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,7 +108,7 @@
     background-color: rgba(76, 76, 76, 0.9);
     z-index: 999;
     border-radius: 35px;
-
+    transform: translateX(-50%);
 }
 
 #routeAccept,
@@ -123,7 +119,7 @@
     border: none;
     cursor: pointer;
     border-radius: 35px;
-    font-size: 16px;
+    font-size: 1.5vw;
     transition: background-color 0.3s ease;
 }
 
@@ -159,7 +155,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     left: 32%;
     top: 8%;
     height: 72%;
@@ -182,7 +178,7 @@
     width: 15%;
     height: 82%;
     left: 84%;
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     background-color: #E74C3C;
     color: white;
     padding: 10px 20px;
@@ -315,10 +311,10 @@
 
 .remove-from-list {
     background-color: #ff6347;
-
+    font-size: 1.5vw;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 5px 15px;
     margin-left: 10px;
     border-radius: 35px;
     cursor: pointer;
@@ -336,7 +332,7 @@
     border: none;
     cursor: pointer;
     border-radius: 35px;
-    font-size: 16px;
+    font-size: 1.5vw;
     transition: background-color 0.3s ease;
     background-color: #D9D9D9;
 }
@@ -346,14 +342,14 @@
 }
 
 #add-star{
-    padding-left: 3rem;
+    padding-left: 4rem;
     background-image: url('../assets/star.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left;
 }
 #add-home{
-    padding-left: 3rem;
+    padding-left: 4rem;
     background-image: url('../assets/home.svg');
     background-size: contain;
     background-repeat: no-repeat;
@@ -361,30 +357,34 @@
 }
 
 .close-keyboard-button {
-    background-color: #757575; /* Średni szary kolor tła */
-    border: none; /* Usunięcie obramowania */
-    color: white; /* Biały kolor tekstu */
-    padding: 10px 20px; /* Wielkość wewnętrznego odstępu */
-    text-align: center; /* Wyśrodkowanie tekstu */
-    font-size: 16px; /* Rozmiar czcionki */
-    cursor: pointer; /* Zmiana kursora na wskaźnik */
-    border-radius: 5px; /* Zakrąglenie rogów */
-    transition: background-color 0.3s ease; /* Płynna zmiana koloru tła */
+    top: 55%;
+    left: 61.5%;
+    position: fixed;
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 1.5vw;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
 }
 
 .close-keyboard-button:hover {
-    background-color: #616161; /* Ciemniejszy szary kolor tła po najechaniu myszą */
+    background-color: #d32f2f;
 }
 
-.close-keyboard-button:active {
-    background-color: #424242; /* Jeszcze ciemniejszy szary kolor tła po kliknięciu */
-}
 
 #keyboard-container{
+    width: 200%;
     z-index: 1000;
-    left: 38%;
+    left: 30%;
     bottom: 6%;
     position: fixed;
+    font-size: 2vw;
+    border-radius: 35px;
 }
 
 .change-list-page {
@@ -393,7 +393,7 @@
 
 .change-list-page button {
     font-size: 1.1rem;
-    margin-right: 5px;
+    margin: 0px 10px;
     cursor: pointer;
     border: none;
     background-color: #ddd;
@@ -404,10 +404,6 @@
 .change-list-page button.active-page {
     background-color: #f7f7f7;
 }
-
-
-
-
 
 #mini-map-wrapper{
     overflow: hidden;
@@ -425,3 +421,43 @@
     overflow: hidden;
     border-radius: 35px;
 }
+
+.hg-button {
+    height: 3vw !important;
+}
+
+.simple-keyboard{
+    border-radius: 35px !important;
+    padding: 20px !important;
+}
+
+.mapboxgl-ctrl-bottom-right {
+    transform: scale(1.5); /* Dostosuj wartość 'scale' według własnych preferencji */
+    margin: 20px 10px;
+}
+
+#center-map-container {
+    font-size: 1.4vw;
+    position: fixed;
+    bottom: 7.5%;
+    left: 84.5%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.car-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+#center-map-button {
+    font-weight: bold;
+    color: #333333;
+}
+

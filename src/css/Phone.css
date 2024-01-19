@@ -495,3 +495,19 @@
   background-color: #11549b; /* Przykładowy kolor dla naciśniętego przycisku */
   /* Dodaj inne style, które chcesz zastosować */
 }
+
+#contactsKeyboardContainer{
+  min-width: 170%;
+  left: 37.5%;
+  bottom: 23%;
+  position: absolute;
+}
+#contactsKeyboardContainer .react-simple-keyboard{
+  background-color: #d4d4d4 !important;
+}
+
+#contact-close-keyboard{
+  font-size: 1vw;
+  left: 71.5%;
+  top: 40%;
+}
