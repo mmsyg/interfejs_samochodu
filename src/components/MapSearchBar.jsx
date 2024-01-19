@@ -294,6 +294,7 @@ const MapSearchBar = ({map}) => {
                     setShowStarPlaces(!showStarPlaces);
                     setShowHomePlaces(false);
                     setSearchBarFocus(1);
+                    setInputFocused(false);
                 }}
                 style={{
                     backgroundImage: `url(${starIcon})`,
@@ -304,7 +305,8 @@ const MapSearchBar = ({map}) => {
             <button id="home-tab" onClick={() => {
                 setShowHomePlaces(!showHomePlaces);
                 setShowStarPlaces(false);
-                setSearchBarFocus(2)
+                setSearchBarFocus(2);
+                setInputFocused(false);
             }} className={searchBarFocus === 2 ? 'focused-tab' : ''}
                     style={{
                         backgroundImage: `url(${homeIcon})`, filter: searchBarFocus === 2 ? 'invert(1)' : ''
