@@ -6,11 +6,8 @@ import ButtonsMini from "../components/ButtonsMini";
 
 import "../index.css"; // Zaimportuj plik CSS dla komponentu
 import MiniMap from "../components/MiniMap";
-
-
+import RadioMini from "../components/RadioMini";
 const HomeScreen = () => {
-  
-
   return (
     <div className="home_screen">
       <Navbar id={0} />
@@ -19,9 +16,11 @@ const HomeScreen = () => {
         <div className="mini_map">
           <MiniMap />
         </div>
-        <div className="radio_mini"></div>
+        <div className="radio_mini">
+          <RadioMini />
+        </div>
         <ContactsMini />
-       <ButtonsMini/>
+        <ButtonsMini />
       </div>
     </div>
   );

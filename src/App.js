@@ -10,6 +10,7 @@ import Radio  from './pages/Radio';
 import Indicators  from './pages/Indicators';
 import Settings  from './pages/Settings';
 
+
 function App() {
   return (
     <Router>
@@ -26,6 +27,7 @@ function App() {
         <Route path="/4" element={<Navigation />}/>
         <Route path="/5" element={<Phone />}/>
         <Route path="/6" element={<Settings />}/>
+    
 
         </Routes>
       </div>
