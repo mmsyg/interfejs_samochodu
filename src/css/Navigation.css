@@ -376,9 +376,9 @@
 
 #keyboard-container{
     z-index: 1000;
-    left: 32%;
-    top:287%;
-    position: absolute;
+    left: 38%;
+    bottom: 6%;
+    position: fixed;
 }
 
 .change-list-page {
