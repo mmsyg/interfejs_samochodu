@@ -1,0 +1,139 @@
+#kontener {
+
+    background-color: #37485d;
+    max-width: 100%;
+    max-height: 90%;
+
+    width: 90%;
+    height: 90%;
+
+
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1%;
+    margin-top: 1%;
+    margin-right: 1%;
+    border-radius: 15px;
+    color: #170d0d;
+    overflow: hidden; /* Zabezpiecza przed wydostawaniem się obrazu poza div */
+
+}
+
+.indicators_site 
+{
+    padding: 20px;
+    background-color: #37485d;
+    overflow: hidden; /* Zabezpiecza przed wydostawaniem się obrazu poza div */
+    border-radius: 15px;
+
+}
+
+
+#napis_na_gorze
+{
+    margin-top: 1%;
+    text-align: center;
+
+}
+
+
+.rzad_1 {
+    width: 11%;
+    height: 11%;
+    max-width: 11%;
+    max-height: 11%;
+    padding: 1%;
+
+    margin-right: 1%;
+    margin-bottom: 1%;
+    margin-left: 1%;
+    margin-top: 1%;
+    border-radius: 15px;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(144, 233, 144); /* Ustaw zielone tło dla każdego kwadratu */
+    border: 5px solid rgba(144, 233, 144, 0.395); /* Dodaj obramowanie */
+    float: left;
+    overflow: hidden; /* Zabezpiecza przed wydostawaniem się obrazu poza div */
+
+}
+.rzad_1:hover {
+    background-color: rgb(186, 186, 186); /* Zmień na dowolny kolor, jaki chcesz */
+    /* Dodatkowe stylizacje po najechaniu myszką, jeśli są potrzebne */
+}
+
+
+.rzad_2 {
+    width: 11%;
+    height: 11%;
+    max-width: 11%;
+    max-height: 11%;
+    padding: 1%;
+
+
+    
+    margin-right: 1%;
+    margin-bottom: 1%;
+    margin-left: 1%;
+    margin-top: 1%;
+    border-radius: 15px;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(144, 233, 144); /* Ustaw zielone tło dla każdego kwadratu */
+    border: 5px solid rgba(233, 186, 144, 0.395); /* Dodaj obramowanie */
+    float: left;
+    overflow: hidden; /* Zabezpiecza przed wydostawaniem się obrazu poza div */
+    
+
+}
+.rzad_2:hover {
+    background-color: rgb(186, 186, 186); /* Zmień na dowolny kolor, jaki chcesz */
+    /* Dodatkowe stylizacje po najechaniu myszką, jeśli są potrzebne */
+}
+
+.rzad_3 {
+
+    width: 11%;
+    height: 11%;
+    max-width: 11%;
+    max-height: 11%;
+    padding: 1%;
+
+    margin-right: 1%;
+    margin-bottom: 1%;
+    margin-left: 1%;
+    margin-top: 1%;
+    border-radius: 15px;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(144, 233, 144); /* Ustaw zielone tło dla każdego kwadratu */
+    border: 5px solid rgba(144, 233, 144, 0.395); /* Dodaj obramowanie */
+    float: left;
+    overflow: hidden; /* Zabezpiecza przed wydostawaniem się obrazu poza div */
+    
+
+}
+.rzad_3:hover {
+    background-color: rgb(186, 186, 186); /* Zmień na dowolny kolor, jaki chcesz */
+    /* Dodatkowe stylizacje po najechaniu myszką, jeśli są potrzebne */
+}
+
+.obrazy {
+
+    justify-content: center;
+    align-items: center;
+    width: 80%; /* Dostosuj szerokość obrazu do 100% szerokości rodzica */
+    height: 80%; /* Dostosuj wysokość obrazu do 100% wysokości rodzica */
+    object-fit: cover; /* Dostosuj zachowanie obrazu wewnątrz obiektu do "cover" */
+}
+
+
+
