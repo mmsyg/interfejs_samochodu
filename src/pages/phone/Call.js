@@ -25,7 +25,7 @@ const Call = ({ isCalling, setIsCalling, phoneNumber, setPhoneNumber }) => {
   const [isButton3Pressed2, setIsButton3Pressed2] = useState(false);
 
   const handleButton3Click2 = () => {
-    setIsButton3Pressed2(!isButton3Pressed); // Zmienia stan na przeciwny
+    setIsButton3Pressed2(!isButton3Pressed2); // Zmienia stan na przeciwny
   };
   useEffect(() => {
     let interval;

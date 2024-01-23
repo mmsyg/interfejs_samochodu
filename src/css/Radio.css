@@ -1,5 +1,9 @@
 .radio_screen {
-  padding: 20px;
+  position: fixed;
+ 
+
+  width: 97%;
+  height: 100%;
 }
 .station-list-container {
   position: fixed;
@@ -12,7 +16,7 @@
   align-items: center;
   margin-left: 10%;
   margin-top: 5%;
-  border-radius: 15px;
+  border-radius: 35px;
 }
 
 .station-list {
@@ -46,7 +50,7 @@
   color: #d4d4d4;
   margin-left: auto;
   margin-top: 5%;
-  border-radius: 15px;
+  border-radius: 35px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -18,9 +18,10 @@ const Car = () => {
 
 
   
-    return ( <div className="car_screen">
- <Navbar id={1}/>
+    return ( <div className="car_screen_main"> <Navbar id={1}/>
       <Topbar />
+    <div className="car_screen">
+
 
       <div id="kontener">
 
@@ -79,7 +80,7 @@ const Car = () => {
 
       </div>
 
-
+</div> 
     </div> );
 }
  

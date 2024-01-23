@@ -12,7 +12,7 @@ import Latest from "./phone/Latest"
 const Phone = () => {
   const [activeComponent, setActiveComponent] = useState("component2");
   const [isCalling, setIsCalling] = useState(false);
-  const [phoneNumber, setPhoneNumber] = useState("123456789")
+  const [phoneNumber, setPhoneNumber] = useState("")
   
   const handleLiClick = (component) => {
     setActiveComponent(component);

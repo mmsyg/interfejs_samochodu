@@ -21,7 +21,7 @@ const Navbar = (props) => {
     { number: 3, image: three },
     { number: 4, image: four },
     { number: 5, image: five },
-    { number: 6, image: six },
+
   ];
 
   useEffect(() => {

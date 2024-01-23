@@ -163,9 +163,10 @@ const Indicators = () => {
     };
 
     return (
-        <div className="indicators_site" >
-            <Navbar id={2} />
+        <div className="indicators_site_main" > <Navbar id={2} />
             <Topbar />
+            <div className="indicators_site">
+           
     
             <div id="kontener">
             <label id="napis_na_gorze"> wskaźnik ostrzeżenia o uszkodzonej lampie </label>
@@ -303,7 +304,7 @@ const Indicators = () => {
 
 
 
-            </div>
+            </div></div>
         </div>
     );
 }

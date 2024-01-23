@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import peopleData from './contacts.json';
 import phone from "../../assets/5.svg";
 import {Link } from 'react-router-dom';
+import del from "../../assets/delete.svg";
 
 const Keyboard = ({ isCalling, setIsCalling,phoneNumber,setPhoneNumber }) => {
 
@@ -14,7 +15,7 @@ const Keyboard = ({ isCalling, setIsCalling,phoneNumber,setPhoneNumber }) => {
 
     const [input, setInput] = useState(phoneNumber);
     const [suggestions, setSuggestions] = useState([]);
-    const maxLength = 9;
+    const maxLength = 11;
 
 
     
@@ -69,7 +70,7 @@ const Keyboard = ({ isCalling, setIsCalling,phoneNumber,setPhoneNumber }) => {
                     </div>
                 ))}
                 <div className="num_button" onClick={handleDelete}>
-                    <p>Bckspc</p>
+                <img src={del} alt={`six`} className='nav_img'/>
                 </div>
             </div>
            {/* Display the input or _ for empty spaces */}
